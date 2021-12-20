@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -11,6 +12,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
   border: 0;
@@ -57,5 +59,75 @@ a:hover {
 
 body {
   background-image: url(../assets/background.png);
+  background-size: 100% auto;
+  height: 100%;
+}
+
+.window {
+  height: 600px;
+  width: 350px;
+  background-color: white;
+  border-radius: 15px;
+  border: 3px solid #000064;
+}
+
+input {
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  -webkit-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+input:focus, input :active {
+  outline: none;
+}
+
+#login {
+  background-color: #000064;
+  color: white;
+  margin-top: 50px;
+}
+
+form {
+  position: relative;
+}
+
+/* Label style after Input feild is in focus. Can also use input:focus ~ label to select sibling. */
+input:focus + label, input:valid + label {
+  font-size: 12px;
+  color: #afbdcf;
+  top: -5px;
+  left: 0px;
+  background: #ffffff;
+  padding: 0px 5px 0px 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.input_wrap {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.input_wrap label {
+  font-family: arial;
+  font-size: 16px;
+  color: #afbdcf;
+  padding: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+input[type="text"]:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */
