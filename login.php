@@ -29,13 +29,13 @@
               <div class="row m-5">
                 <img src="assets/L.C. Hughes Logo.png" alt="Logo">
               </div>
-              <form action="" method="post">
+              <form action="success.php" method="post">
                 <div class="row my-5 mx-3 input_wrap justify-content-start">
-                  <input type="text" name="username" id="username" required>
+                  <input type="text" name="username" id="username" required autocomplete="off" pattern="[A-Za-z]{3,}">
                   <label>Username</label>
                 </div>
                 <div class="row my-5 mx-3 input_wrap justify-content-start">
-                  <input type="password" name="password" id="password" required>
+                  <input type="password" name="password" id="password" required autocomplete="new-password" pattern="[a-zA-Z0-9-]+">
                   <label>Password</label>
                 </div>
                 <div class="row my-5 mx-3">
