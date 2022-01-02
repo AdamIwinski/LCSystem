@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>LC Hughes - vehicle inventory system</title>
+<?php
+  session_start();
+  if((isset($_SESSION['logged_in'])) && ($_SESSION['logged_in'] ==true)){
+    header('Location: list.php');
+    exit();
+  }
 
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link rel="apple-touch-icon" href="./assets/favicon.ico"/>
-
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="./css/bootstrap.css">
-        <link rel="stylesheet" href="./css/style.css">
-
-        <!-- Google Fonts -->
-
-        
-    </head>
-    <body>
+  include './components/header.php';
+?>
         <!-- Responsive navbar-->
 
         <!-- Page content-->
@@ -29,7 +16,14 @@
               <div class="row m-5">
                 <img src="assets/L.C. Hughes Logo.png" alt="Logo">
               </div>
-              <form action="success.php" method="post">
+              <form action="loginSuccess.php" method="post">
+                <div class="row">
+                  <?php
+                    if(isset($_SESSION['error'])){
+                      echo $_SESSION['error'];
+                    } 
+                  ?>
+                </div>
                 <div class="row my-5 mx-3 input_wrap justify-content-start">
                   <input type="text" name="username" id="username" required autocomplete="off" pattern="[A-Za-z]{3,}">
                   <label>Username</label>
@@ -39,21 +33,13 @@
                   <label>Password</label>
                 </div>
                 <div class="row my-5 mx-3">
-                  <input type="submit" name="password" id="login" value="Login">
+                  <input type="submit" name="submit" id="main" value="Login">
                 </div>
               </form>
             </div>
           </div>
         </div>
         <!-- End Page content -->
-
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-
-        <!-- Font Awsome -->
-        <script src="https://kit.fontawesome.com/dd12015ad5.js" crossorigin="anonymous"></script>
-    </body>
-</html>
+<?php
+  include './components/footer.php';
+?>
