@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 @font-face {
   font-family: "REG";
   src: url("../assets/font/CharlesWright-Bold.ttf");
@@ -70,6 +71,10 @@ body {
 
 #registration {
   font-family: 'REG';
+}
+
+#vin {
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .window {
@@ -169,11 +174,11 @@ input[type="text"]:focus {
 
 .sale {
   color: white;
-  background-color: darkgreen;
+  background-color: #004e00;
 }
 
 .sale-frame {
-  border-bottom: solid 3px darkgreen;
+  border-bottom: solid 3px #004e00;
 }
 
 .Yard {
@@ -182,7 +187,7 @@ input[type="text"]:focus {
 }
 
 .Yard-frame {
-  border-bottom: solid 3px #143591;
+  border-bottom: solid 3px #000064;
 }
 
 .Depolution {
@@ -196,11 +201,11 @@ input[type="text"]:focus {
 
 .Compound {
   color: white;
-  background-color: red;
+  background-color: #a30000;
 }
 
 .Compound-frame {
-  border-bottom: solid 3px red;
+  border-bottom: solid 3px #a30000;
 }
 
 .card-footer {

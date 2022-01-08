@@ -12,5 +12,14 @@ echo
 
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/dd12015ad5.js" crossorigin="anonymous"></script>
+        <script src="js/jquery.min.js"></script>
+        
+    <!-- Time stamp format -->
+    <script src="js/jquery.timego.js"></script>
+    <script>
+      jQuery(document).ready(function() {
+      jQuery("time.timeago").timeago();
+      });
+    </script>
 </body>
 </html>';

@@ -1,5 +1,5 @@
 <?php
-
+include './components/restrict.php';
 $message = ''; 
 if (isset($_POST['submit'])){
   if (isset($_FILES['fileUpload']) && $_FILES['fileUpload']['error'] === UPLOAD_ERR_OK)
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])){
       if(move_uploaded_file($fileTmpPath, $dest_path)) 
       {
         $message ='File is successfully uploaded.';
-        // echo $message;
+        $_SESSION['Path'] = $dest_path;
       }
       else 
       {
@@ -49,6 +49,7 @@ if (isset($_POST['submit'])){
   else
   {
     $dest_path = "pictures/Default.png";
+    $_SESSION['Path'] = $dest_path;
     // $message = 'There is some error in the file upload. Please check the following error.<br>';
     // $message .= 'Error:' . $_FILES['fileUpload']['error'];
     
@@ -56,7 +57,3 @@ if (isset($_POST['submit'])){
     // header('Location: check_in_vehicle_data.php');
   }
 }
-// echo $message;
-// echo $dest_path;
-
-$_SESSION['Path'] = $dest_path;

@@ -2,10 +2,10 @@
   session_start();
   include './components/restrict.php';
 
-  if(!isset($_SESSION['data'])){
-    header('Location: list.php');
-    exit();
-  }
+  // if(!isset($_SESSION['data'])){
+  //   header('Location: list.php');
+  //   exit();
+  // }
   
   include './components/header.php';
   include './components/navbar.php';
@@ -66,7 +66,8 @@
             <label>Location*</label>
           </div>
         <div class="row my-4 mx-3">
-          <input type="submit" name="submit" id="main" value="Check in">
+          <input type="submit" name="submit" id="main" value="Update">
+
         </div>
       </form>
     </div>

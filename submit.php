@@ -40,20 +40,10 @@
       $_POST["Parts_sold"] = "None";
     }
   $_SESSION['Location'] = $_POST["Location"];
+
   $_SESSION['Engine_Starts'] = $_POST["Engine_Starts"];
 
-  // data for mysqli
-  $_SESSION['Vrm'];
-  $_SESSION['Milage'];
-  $_SESSION['Price'];
-  $_SESSION['Engine_price'];
-  $_SESSION['Engine_Starts'];
-  $_SESSION['Path'];
-  $_SESSION['Comment'];
-  $_SESSION['Parts_sold'];
-  $_SESSION['Location'];
-  $_SESSION['data'];
-
+  $allData = json_encode($_SESSION['data']);
   $data = $_SESSION['data']['Response']['DataItems']['VehicleRegistration'];
   $data2 = $_SESSION['data']['Response']['DataItems']['SmmtDetails'];
   
@@ -150,9 +140,9 @@ $data2['Transmission'];
     }
 ?>
 
-<div class="container col col-md-10">
+<div class="container col-10">
   <div class="row g-0 justify-content-center">
-    <div class="col-md-8 card mb-3 <?php echo $_POST["Location"]?>-frame">
+    <div class="col-md-10 card mb-5 mt-2 <?php echo $_POST["Location"]?>-frame">
       <div class="card-header mb-4 <?php echo $_POST["Location"]?>">
           <div><?php echo $_POST["Location"];?></div>
       </div>
@@ -185,7 +175,6 @@ $data2['Transmission'];
                 </tr>
                 <tr>
                   <td><p>Engine price:</p></td>
-
                   <td class="text-end"><p><?php echo $_POST["Engine_price"]?></p></td>
                 </tr>
               </tbody>
@@ -197,9 +186,8 @@ $data2['Transmission'];
             </h3>
           </div>
           <div class="col-lg-6 text-center">
-            <h3 class="my-2" id="registration">VIN: <?php echo $data['Vin']?></h3>
+            <h3 class="my-2" id="vin"><?php echo $data['Vin']?></h3>
           </div>
-
         </div>
 
 <!-- modal -->
@@ -290,12 +278,53 @@ $data2['Transmission'];
       </div>
       <div class="div d-flex justify-content-evenly mb-5">
         <a id="back" class="btn btn-secondary w-25" href="delete_Picture.php">Back</a>
-        <button type="submit" name="submit" class="btn btn-primary w-25">Submit</button>
+        <form action="push.php" method="post" class="w-25">
+          <input type="hidden" name="Location" value='<?php echo $_SESSION['Location']?>'>
+          <input type="hidden" name="Vrm" value='<?php echo $_SESSION['Vrm']?>'>
+          <input type="hidden" name="Milage" value='<?php if(empty($_SESSION['Milage'])){
+            echo "Unknown";
+          }else{
+            echo $_SESSION['Milage'];
+          }
+          ?>'>
+          <input type="hidden" name="Price" value='<?php if(empty($_SESSION['Price'])){
+            echo "Unknown";
+          }else{
+            echo $_SESSION['Price'];
+          }
+          ?>'>
+          <input type="hidden" name="Engine_price" value='<?php if(empty($_SESSION['Engine_price'])){
+            echo "Unknown";
+          }else{
+            echo $_SESSION['Engine_price'];
+          }
+          ?>'>
+          <input type="hidden" name="Engine_Starts" value='<?php if(empty($_SESSION['Engine_Starts'])){
+            echo "oko";
+          }else{
+            echo $_SESSION['Engine_Starts'];
+          }
+          ?>''>
+          <input type="hidden" name="Path" value='<?php echo $_SESSION['Path']?>'>
+          <input type="hidden" name="Comment" value='<?php if(empty($_SESSION['Comment'])){
+            echo "Unknown";
+          }else{
+            echo $_SESSION['Comment'];
+          }
+          ?>''>
+          <input type="hidden" name="Parts_sold" value='<?php if(empty($_SESSION['Parts_sold'])){
+            echo "Unknown";
+          }else{
+            echo $_SESSION['Parts_sold'];
+          }
+          ?>''>
+          <input type="hidden" name="Data" value='<?php echo $allData ?>'>
+        <button type="submit" name="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
       </div>
     </div>
-
   </div>
 </div>
-<?php
+<?php 
   include './components/footer.php';
 ?>

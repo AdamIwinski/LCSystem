@@ -1,3 +1,5 @@
+<?php
+echo '
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,6 @@
       padding: 0;
       overflow: hidden;
       font-weight: 200;
-      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     h1,h2,p{
       text-align: center;
@@ -62,9 +63,11 @@
         <h1>404</h1>
         <h2>OOPS! NOTHING WAS FOUND</h2>
         <P>The page you are looking for might have been removed, had its name changed or is temporarily unaviable.<br><br>
-          <a href="http://project.babon.co.uk/index.php">Return to homepage.</a></P>
+          <a href="list.php">Return to homepage.</a></P>
       </div>
     </div>
   </main>
 </body>
 </html>
+
+';
