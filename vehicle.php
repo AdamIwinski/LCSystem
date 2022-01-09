@@ -229,8 +229,7 @@ if(isset($_SESSION['username'])){
 
 <?php
 if(isset($_SESSION['username'])){
-  $_SESSION['Vrm'] = "vrm tu";
-  // sesja slabe
+  $_SESSION['Id'] = $car['id'];
   echo '<a href="edit.php" class="btn btn-primary w-25">Edit</a>';
 }
 ?>

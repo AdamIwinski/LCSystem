@@ -45,6 +45,7 @@ if(isset($_SESSION['username'])){
     {
       echo '<span style="color:red;">error</span>';;
     } 
+    include './components/clear.php';
 ?>
 <div class="container">
   <?php   foreach ($cars as $car){

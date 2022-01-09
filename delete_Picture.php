@@ -3,7 +3,7 @@ session_start();
 include './components/restrict.php';
 // using unlike() function 
 $file_pointer = $_SESSION['Path']; 
-echo $file_pointer;
+// echo $file_pointer;
 if ($file_pointer !== "pictures/Default.png"){
   unlink($file_pointer);
   unset($_SESSION['Path']);

@@ -21,8 +21,6 @@
       $_POST["Price"] = "£".$_POST["Price"];
     }
 
-  //  file
-
   $_SESSION['Engine_price'] = $_POST["Engine_price"];
   if("" == trim($_POST["Engine_price"])){
       $_POST["Engine_price"] = $callForPrice;
@@ -300,20 +298,20 @@ $data2['Transmission'];
           }
           ?>'>
           <input type="hidden" name="Engine_Starts" value='<?php if(empty($_SESSION['Engine_Starts'])){
-            echo "oko";
+            echo "Unknown";
           }else{
             echo $_SESSION['Engine_Starts'];
           }
           ?>''>
           <input type="hidden" name="Path" value='<?php echo $_SESSION['Path']?>'>
           <input type="hidden" name="Comment" value='<?php if(empty($_SESSION['Comment'])){
-            echo "Unknown";
+            echo "None";
           }else{
             echo $_SESSION['Comment'];
           }
           ?>''>
           <input type="hidden" name="Parts_sold" value='<?php if(empty($_SESSION['Parts_sold'])){
-            echo "Unknown";
+            echo "None";
           }else{
             echo $_SESSION['Parts_sold'];
           }
