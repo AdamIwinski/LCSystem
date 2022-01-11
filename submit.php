@@ -55,9 +55,9 @@ $data['VehicleClass'];
       $data["VehicleClass"] = "Unknown";
     }
 
-$data['EngineNumber'];
-  if("" == trim($data["EngineNumber"])){
-      $data["EngineNumber"] = "Unknown";
+$engineCode = $_SESSION['data']['Response']['DataItems']['TechnicalDetails']['General']['Engine']['Code']['CodeList'][0]['EngineCode'];
+  if("" == trim($engineCode)){
+      $engineCode = "Unknown";
     }
 
 $data['EngineCapacity'];
@@ -169,7 +169,7 @@ $data2['Transmission'];
                 </tr>
                 <tr>
                   <td><p>Engine number:</p></td>
-                  <td class="text-end"><p><?php echo $data["EngineNumber"]?></p></td>
+                  <td class="text-end"><p><?php echo $engineCode?></p></td>
                 </tr>
                 <tr>
                   <td><p>Engine price:</p></td>

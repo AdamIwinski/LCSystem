@@ -55,6 +55,7 @@ if(isset($_SESSION['username'])){
       <th scope="col">Make</th>
       <th scope="col">Model</th>
       <th scope="col">Year</th>
+      <th scope="col">Engine Code</th>
       <th scope="col">Engine size</th>
       <th scope="col">Fuel Type</th>
       <th scope="col">Transmission</th>
@@ -76,6 +77,7 @@ if(isset($_SESSION['username'])){
     $date2 = new DateTime($date1);
     $date3 = new DateTime($car[11]);
     $days  = $date3->diff($date2)->format('%a');
+    $date3 = date("Y-m-d");
 
 
     $data = json_decode($car[9], true);
@@ -86,6 +88,7 @@ if(isset($_SESSION['username'])){
     $make = $data['Response']['DataItems']['VehicleRegistration']['Make'];
     $fuelType = $data['Response']['DataItems']['VehicleRegistration']['FuelType'];
     $Transmission = $data['Response']['DataItems']['SmmtDetails']['Transmission'];
+    $engineCode = $data['Response']['DataItems']['TechnicalDetails']['General']['Engine']['Code']['CodeList'][0]['EngineCode'];
     $location = $car[10];
     $price = $car[3];
     $path = $car[6];
@@ -107,12 +110,13 @@ if(isset($_SESSION['username'])){
       <td>'.$make.'</td>
       <td>'.$model.'</td>
       <td>'.$yearOfManufacture.'</td>
+      <td>'.$engineCode.'</td>
       <td>'.$engineCapacity.'cc</td>
       <td>'.$fuelType.'</td>
       <td>'.$Transmission.'</td>
       <td>'.$milage.'</td>
       <td>'.$car[10].'</td>
-      <td>'.$car[11].'</td>
+      <td>'.$date3.'</td>
       <td>'.$days.'</td>
       <td><a href="vehicle.php?id='.$id.'" class="btn btn-primary">View</a></td>
     </tr>

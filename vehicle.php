@@ -37,7 +37,11 @@ if(!isset($car['Vrm'])){
   include 'echo.php';
   exit();
 }
+
 $data = json_decode($car['Data'], true);
+
+$EngineCode = $data['Response']['DataItems']['TechnicalDetails']['General']['Engine']['Code']['CodeList'][0]['EngineCode'];
+
 $vrm = $data['Response']['DataItems']['VehicleRegistration']['Vrm'];
 $colour = $data['Response']['DataItems']['VehicleRegistration']['Colour'];
 if("" == trim($colour)){
@@ -48,10 +52,9 @@ $vehicleClass = $data['Response']['DataItems']['VehicleRegistration']['VehicleCl
 if("" == trim($vehicleClass)){
       $vehicleClass = "Unknown";
     }
-
-$engineNumber = $data['Response']['DataItems']['VehicleRegistration']['EngineNumber'];
-if("" == trim($engineNumber)){
-      $engineNumber = "Unknown";
+$engineCode = $data['Response']['DataItems']['TechnicalDetails']['General']['Engine']['Code']['CodeList'][0]['EngineCode'];
+if("" == trim($engineCode)){
+      $engineCode = "Unknown";
     }
 
 $engineCapacity = $data['Response']['DataItems']['VehicleRegistration']['EngineCapacity'];
@@ -185,8 +188,8 @@ $dateAdded = $car['time'];
                   </td>
                 </tr>
                 <tr>
-                  <td><p>Engine number:</p></td>
-                  <td class="text-end"><p><?php echo $engineNumber?></p></td>
+                  <td><p>Engine code:</p></td>
+                  <td class="text-end"><p><?php echo $engineCode?></p></td>
                 </tr>
                 <tr>
                   <td><p>Engine price:</p></td>

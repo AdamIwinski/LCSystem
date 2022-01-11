@@ -4,7 +4,6 @@ include 'variables.php';
 if(isset($_SESSION['username'])){
   $username = $_SESSION['username'];
 echo
-
 '<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <!-- Container wrapper -->

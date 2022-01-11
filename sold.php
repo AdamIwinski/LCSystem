@@ -5,7 +5,7 @@
   include './components/header.php';
   include './components/navbar.php';
 
-    require_once "connect.php";
+  require_once "connect.php";
   mysqli_report(MYSQLI_REPORT_STRICT);
 
     try{
@@ -25,7 +25,6 @@
     {
       echo '<span style="color:red;">error</span>';;
     } 
-    include './components/clear.php';
 ?>
 <div class="container bg-white table-responsive mt-4">
 
@@ -70,6 +69,7 @@ echo
   </tbody>
 </table>
 </div>
+
 <?php
   include './components/footer.php';
 ?>
