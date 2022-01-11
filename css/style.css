@@ -219,4 +219,20 @@ input[type="text"]:focus {
 .btn-primary {
   background-color: #000064;
 }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  --bs-table-accent-bg: rgb(22 22 22 / 20%);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd):hover {
+  --bs-table-accent-bg: rgb(22 22 22 / 25%);
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  --bs-table-accent-bg: rgb(255, 255, 255);
+}
+
+.table-striped > tbody > tr:nth-of-type(even):hover {
+  --bs-table-accent-bg: rgb(235, 235, 235);
+}
 /*# sourceMappingURL=style.css.map */

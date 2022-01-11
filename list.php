@@ -15,6 +15,7 @@ if(isset($_SESSION['username'])){
           <button class="btn btn-primary filter-button" data-filter="Compound-frame">Compound</button>
           <button class="btn btn-primary filter-button" data-filter="Depolution-frame">Depolution</button>
           <button class="btn btn-primary filter-button" data-filter="Yard-frame">Yard</button>
+          <a href="list-simple.php"  class="btn btn-secondary">Simple</a>
       </div>
     </div>';
 }

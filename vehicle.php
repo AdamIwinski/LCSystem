@@ -40,21 +40,90 @@ if(!isset($car['Vrm'])){
 $data = json_decode($car['Data'], true);
 $vrm = $data['Response']['DataItems']['VehicleRegistration']['Vrm'];
 $colour = $data['Response']['DataItems']['VehicleRegistration']['Colour'];
+if("" == trim($colour)){
+      $colour = "Unknown";
+    }
+
 $vehicleClass = $data['Response']['DataItems']['VehicleRegistration']['VehicleClass'];
+if("" == trim($vehicleClass)){
+      $vehicleClass = "Unknown";
+    }
+
 $engineNumber = $data['Response']['DataItems']['VehicleRegistration']['EngineNumber'];
+if("" == trim($engineNumber)){
+      $engineNumber = "Unknown";
+    }
+
 $engineCapacity = $data['Response']['DataItems']['VehicleRegistration']['EngineCapacity'];
+if("" == trim($engineCapacity)){
+      $engineCapacity = "Unknown";
+    }
+
 $yearOfManufacture = $data['Response']['DataItems']['VehicleRegistration']['YearOfManufacture'];
+if("" == trim($yearOfManufacture)){
+      $yearOfManufacture = "Unknown";
+    }
+
 $model = $data['Response']['DataItems']['VehicleRegistration']['Model'];
+if("" == trim($model)){
+      $model = "Unknown";
+    }
+
 $gearCount = $data['Response']['DataItems']['VehicleRegistration']['GearCount'];
+if("" == trim($gearCount)){
+      $gearCount = "Unknown";
+    }
+
 $vin = $data['Response']['DataItems']['VehicleRegistration']['Vin'];
+if("" == trim($vin)){
+      $vin = "Unknown";
+    }
+
 $make = $data['Response']['DataItems']['VehicleRegistration']['Make'];
+if("" == trim($make)){
+      $make = "Unknown";
+    }
+
 $seatingCapacity = $data['Response']['DataItems']['VehicleRegistration']['SeatingCapacity'];
+if("" == trim($seatingCapacity)){
+      $seatingCapacity = "Unknown";
+    }
+
 $fuelType = $data['Response']['DataItems']['VehicleRegistration']['FuelType'];
+if("" == trim($fuelType)){
+      $fuelType = "Unknown";
+    }
+
 $Co2Emissions = $data['Response']['DataItems']['VehicleRegistration']['Co2Emissions'];
+if("" == trim($Co2Emissions)){
+      $Co2Emissions = "Unknown";
+    }
+
 $VehicleClass = $data['Response']['DataItems']['VehicleRegistration']['VehicleClass'];
+if("" == trim($VehicleClass)){
+      $VehicleClass = "Unknown";
+    }
+
 $BodyStyle = $data['Response']['DataItems']['SmmtDetails']['BodyStyle'];
+if("" == trim($BodyStyle)){
+      $BodyStyle = "Unknown";
+    }
+
+$series = $data['Response']['DataItems']['SmmtDetails']['Series'];
+if("" == trim($series)){
+      $series = "Unknown";
+    }
+
 $NumberOfDoors = $data['Response']['DataItems']['SmmtDetails']['NumberOfDoors'];
+if("" == trim($NumberOfDoors)){
+      $NumberOfDoors = "Unknown";
+    }
+
 $Transmission = $data['Response']['DataItems']['SmmtDetails']['Transmission'];
+if("" == trim($Transmission)){
+      $Transmission = "Unknown";
+    }
+
 $location = $car['Location'];
 $price = $car['Price'];
 $path = $car['Path'];
@@ -93,6 +162,7 @@ $dateAdded = $car['time'];
       </div>
       <div class="container col-10">
         <h2><?php echo $make." ".$model ?></h2>
+        <p><?php echo $series ?></p>
         <div class="row mt-4">
           <div class="col-lg-6"><img src="<?php echo  $path?>" class="img-fluid" style="object-fit:cover; height:100%;" alt=""></div>
           <div class="col-lg-6">

@@ -31,6 +31,10 @@
       }  
 } 
 $_SESSION['Path'] = $car['Path'];
+$_SESSION['Time'] = $car['time'];
+$data = json_decode($car['Data'], true);
+$_SESSION['Model'] = $data['Response']['DataItems']['VehicleRegistration']['Model'];
+$_SESSION['Make'] = $data['Response']['DataItems']['VehicleRegistration']['Make'];
 
 if (isset($_POST['submit'])){
   if (isset($_FILES['fileUpload']) && $_FILES['fileUpload']['error'] === UPLOAD_ERR_OK)
@@ -156,10 +160,12 @@ if (isset($_POST['submit'])){
           <div class="row my-4 mx-3 input_wrap justify-content-start">
             <select name="Location" aria-label="Location">
               <option value="<?php echo $car['Location']?>"><?php echo $car['Location']?></option>
-              <option value="Depolution" selected>Depolution</option>
+              <option value="Depolution">Depolution</option>
               <option value="Compound">Compound</option>
               <option value="For sale">For Sale</option>
               <option value="Yard">Yard</option>
+              <option value="Sold">Sold</option>
+              <option value="Recycled">Recycled</option>
             </select>
             <label>Location*</label>
           </div>
