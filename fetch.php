@@ -11,7 +11,7 @@ include './components/restrict.php';
     $curl = curl_init();
 
     // Set API Key
-    $ApiKey = "04b698ce-b079-477f-90d5-f8e3b3c2471f";
+    $ApiKey = "a$kUrMOTher";
 
     // Construct URL String
     $url = "https://uk1.ukvehicledata.co.uk/api/datapackage/%s?v=2&api_nullitems=1&key_vrm=%s&auth_apikey=%s";
